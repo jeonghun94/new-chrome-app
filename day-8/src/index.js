@@ -12,5 +12,4 @@ const calculateDate = () => {
 
   clockTitle.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
-
 setInterval(calculateDate, 1000);
