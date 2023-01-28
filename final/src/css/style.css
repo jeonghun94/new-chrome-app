@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/5.jpg");
+  background-image: url("../img/7.jpg");
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -107,11 +107,11 @@ input {
   flex-direction: column;
   gap: 10px;
   padding: 10px;
+  /* visibility: hidden; */
 }
 
 .todo-container .todo-box {
-  width: 300px;
-  /* width: auto; */
+  width: 270px;
   height: auto;
   padding: 20px;
   border-radius: 5px;
@@ -119,19 +119,20 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
+  display: none;
 }
 
 .todo-box .main {
   width: 100%;
-  height: 110px;
-  margin-top: 50px;
+  height: 100px;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  margin: 25px 0;
   color: #c2c2c2;
-  /* display: none; */
 }
 
 .todo-box .main button {
@@ -144,7 +145,6 @@ input {
 }
 
 .todo-box .footer {
-  margin-top: 20px;
   visibility: hidden;
 }
 
@@ -158,8 +158,11 @@ input {
 }
 
 .quote {
-  margin-left: 300px;
+  /* margin-left: 270px; */
   align-self: flex-end;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .todo-list {
@@ -168,7 +171,6 @@ input {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #fff;
   box-sizing: border-box;
   padding: 2px;
   display: none;
@@ -176,12 +178,13 @@ input {
 
 .todo-item {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 2px;
-  color: "red";
 }
+
 .todo-item input[type="checkbox"] {
   width: 15px;
   height: 15px;
