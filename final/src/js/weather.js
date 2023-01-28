@@ -11,6 +11,11 @@ function onGeoOk(position) {
     .then((data) => {
       city.innerText = data.name;
       weather.innerText = `${Math.floor(data.main.temp)}°`;
+      const weatherIcon = document.createElement("img");
+      weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      weatherIcon.style.width = "20px";
+      weatherIcon.style.height = "20px";
+      weather.prepend(weatherIcon);
     });
 }
 function onGeoError() {

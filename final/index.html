@@ -12,24 +12,45 @@
     <h1 class="clock"></h1>
     <h2 class="greeting"></h2>
     <input type="text" id="nameInput" />
+
     <div class="weather">
       <span></span>
       <span></span>
     </div>
+
     <div class="focus-container">
-      <h3>What is your main focus for today?</h3>
-      <input type="text" />
+      <div class="write-box">
+        <h3>What is your main focus for today?</h3>
+        <input type="text" />
+      </div>
+      <div class="focus-box">
+        <h3>TODAY</h3>
+      </div>
     </div>
+
     <div class="bottom-container">
       <p></p>
       <p class="quote"></p>
-      <button type="button" class="todoBtn">Todo</button>
+      <div class="todo-container">
+        <div class="todo-box">
+          <div class="header">
+            <h3>Today</h3>
+          </div>
+          <div class="main">
+            <h3>Add a todo get started</h3>
+            <button>New Todo</button>
+            <div class="todo-list"></div>
+          </div>
+          <div class="footer"><input type="text" placeholder="New Todo" /></div>
+        </div>
+        <button type="button" class="todoBtn">Todo</button>
+      </div>
     </div>
   </body>
+  <script src="./src/js/weather.js"></script>
   <script src="./src/js/clock.js"></script>
-  <script src="./src/js/user.js"></script>
+  <script src="./src/js/greeting.js"></script>
   <script src="./src/js/quotes.js"></script>
   <script src="./src/js/focus.js"></script>
   <script src="./src/js/todo.js"></script>
-  <script src="./src/js/weather.js"></script>
 </html>
