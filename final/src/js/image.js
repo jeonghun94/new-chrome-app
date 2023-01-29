@@ -4,7 +4,7 @@ const getRandomIntInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const imgNumber = getRandomIntInclusive(1, 6);
+const imgNumber = getRandomIntInclusive(1, 16);
 const changeImage = () => {
   document.body.style.backgroundImage = `url(./src/img/${imgNumber}.jpg)`;
 };
