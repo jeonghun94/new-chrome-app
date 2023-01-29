@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/88fb375133.js"
+      crossorigin="anonymous"
+    ></script>
     <title>New Tab</title>
   </head>
   <body>
+    <div class="top-container">
+      <div class="link">
+        <h3>Links</h3>
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="" />
+      </div>
+      <div class="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <h1 class="clock"></h1>
     <h2 class="greeting"></h2>
     <input type="text" id="nameInput" />
-
-    <div class="weather">
-      <span></span>
-      <span></span>
-    </div>
 
     <div class="focus-container">
       <div class="write-box">
@@ -38,7 +49,7 @@
           </div>
           <div class="main">
             <h3>Add a todo get started</h3>
-            <button class="main-btn">New Todo</button>
+            <button class="main-btn" type="button">New Todo</button>
             <div class="todo-list"></div>
           </div>
           <div class="footer"><input type="text" placeholder="New Todo" /></div>
@@ -54,4 +65,5 @@
   <script src="./src/js/quotes.js"></script>
   <script src="./src/js/focus.js"></script>
   <script src="./src/js/todo.js"></script>
+  <script src="./src/js/link.js"></script>
 </html>

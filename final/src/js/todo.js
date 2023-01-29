@@ -20,38 +20,66 @@ const deleteToDo = (event) => {
 
   if (toDos.length === 0) {
     main.style.height = "100px";
-    main.style.margin = "25px 0px";
+    main.style.margin = "58px 0px 10px 0px";
     main.style.gap = "30px";
-    main.style.transition = "height .5s ease-in-out, margin .5s ease-in-out";
+    main.style.alignItems = "center";
+
     main.querySelector("h3").style.display = "block";
+    main.querySelector("button").style.opacity = "1";
     main.querySelector("button").style.display = "block";
+
+    main.style.transition = "all .5s ease-in-out";
     footer.style.visibility = "hidden";
   }
 
   saveToDos();
 };
 
+const checkTodo = (event) => {
+  const div = event.target.parentElement;
+  const span = div.querySelector("span");
+  if (event.target.checked) {
+    span.style.textDecoration = "line-through";
+    span.style.color = "#c8c8c8";
+  } else {
+    span.style.textDecoration = "none";
+    span.style.color = "white";
+  }
+};
+
 const paintToDo = (newTodo) => {
+  const todoItem = document.createElement("div");
+  todoItem.classList.add("todo-item");
+  todoItem.id = newTodo.id;
+
   const div = document.createElement("div");
-  div.id = newTodo.id;
+
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+  checkbox.addEventListener("click", checkTodo);
+
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   span.style.color = "white";
 
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const icon = document.createElement("i");
+  icon.classList.add("fas", "fa-times", "icon");
+  // icon.classList.add("fas", "fa-ellipsis-h", "icon");
+  icon.style.color = "#c8c8c8";
+
+  icon.addEventListener("click", deleteToDo);
 
   div.appendChild(checkbox);
   div.appendChild(span);
-  div.appendChild(button);
-  div.classList.add("todo-item");
 
-  const listd = main.querySelector(".todo-list");
-  listd.style.display = "block";
-  listd.append(div);
+  todoItem.appendChild(div);
+  todoItem.appendChild(icon);
+
+  todoItem.classList.add("todo-item");
+
+  const todos = main.querySelector(".todo-list");
+  todos.style.display = "block";
+  todos.append(todoItem);
 
   main.querySelector("h3").style.display = "none";
   main.querySelector("button").style.display = "none";
@@ -105,7 +133,6 @@ window.addEventListener("load", () => {
 
 newBtn.addEventListener("click", () => {
   footer.style.visibility = "visible";
-  newBtn.disabled = true;
   newBtn.style.opacity = "0";
   newBtn.style.transition = "opacity .5s ease-in-out";
   todoInput.focus();
@@ -119,6 +146,5 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 } else {
-  console.log("no todos");
   footer.style.visibility = "hidden";
 }
