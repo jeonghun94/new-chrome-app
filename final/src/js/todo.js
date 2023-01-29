@@ -88,19 +88,22 @@ const paintToDo = (newTodo) => {
   main.style.transition = "height .5s ease-in-out, margin .5s ease-in-out";
 };
 
-todoInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
+todoInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
     const todo = todoInput.value;
-    todoInput.value = "";
     if (todo === "") return;
 
     const newTodo = {
       text: todo,
       id: Date.now(),
     };
+
+    console.log(newTodo);
+
     toDos.push(newTodo);
     paintToDo(newTodo);
     saveToDos();
+    todoInput.value = "";
   }
 });
 

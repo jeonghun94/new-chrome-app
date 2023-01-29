@@ -6,4 +6,4 @@ const redirect = (e) => {
   }
 };
 
-linkInput.addEventListener("keydown", redirect);
+linkInput.addEventListener("keypress", redirect);
