@@ -27,7 +27,7 @@ const paintGreeting = () => {
   }
 };
 
-nameInput.addEventListener("keydown", (event) => {
+nameInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     localStorage.setItem("username", nameInput.value);
     nameInput.value = "";

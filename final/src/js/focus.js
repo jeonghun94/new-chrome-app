@@ -24,7 +24,7 @@ const paintFocus = () => {
   }
 };
 
-focusInput.addEventListener("keydown", (event) => {
+focusInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     localStorage.setItem("focus", focusInput.value);
     focusInput.value = "";
